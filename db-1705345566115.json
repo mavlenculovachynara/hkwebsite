@@ -1,0 +1,59 @@
+{
+  "books": [
+    {
+      "title": "Jujutsu Kaisen v10",
+      "genre": "Графические романы",
+      "description": "Акутами Гэгэ",
+      "price": 1248,
+      "image": "https://img4.labirint.ru/rc/d126dd5f206bfff6ebae7b130b4b1608/363x561q80/books101/1000588/cover.jpg?1705119912",
+      "Жанр": "Графические романы",
+      "id": 1
+    },
+    {
+      "title": "Jujutsu Kaisen. v5",
+      "genre": "Драма",
+      "description": "Акутами Гэгэ",
+      "price": 1248,
+      "image": "https://img3.labirint.ru/rc/5aa7f99d2a7bff4391c7cea08697ab2f/363x561q80/books97/966963/cover.jpg?1692023509",
+      "Жанр": "Графические романы",
+      "id": 2
+    },
+    {
+      "title": "Расставание из ада",
+      "genre": "Драма",
+      "description": "Кардинал Энн Давила",
+      "price": 564,
+      "image": "https://img3.labirint.ru/rc/114f3ad5c7089ed8f28ad9fea21bb6b1/363x561q80/books101/1000413/cover.jpg?1705058768",
+      "Жанр": "Драма",
+      "id": 3
+    },
+    {
+      "title": "Призрачный Гонщик",
+      "genre": "Графические романы",
+      "description": "Эннис Гарт",
+      "price": 1456,
+      "image": "https://img3.labirint.ru/rc/7a25e42c3d7649a9da4dd84063f5b669/363x561q80/books101/1000241/cover.jpg?1704904077",
+      "Жанр": "Графические романы",
+      "id": 4
+    }
+  ],
+  "genre": [
+    {
+      "name": "Триллер",
+      "id": 1
+    },
+    {
+      "name": "Драма",
+      "id": 2
+    },
+    {
+      "name": "Графические романы",
+      "id": 3
+    },
+    {
+      "name": "комедия",
+      "id": 4
+    }
+  ],
+  "favorites": []
+}
