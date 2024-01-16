@@ -34,9 +34,9 @@ const pages = [
 const Search = styled('div')(({ theme }) => ({
 	position: 'relative',
 	borderRadius: theme.shape.borderRadius,
-	backgroundColor: alpha(theme.palette.common.white, 1.30),
+	backgroundColor: 'rgba(255, 255, 255, 1)',
 	'&:hover': {
-	  backgroundColor: alpha(theme.palette.common.white, 0.65),
+		backgroundColor: 'rgba(255, 255, 255, 0.65)', 
 	},
 	marginRight: theme.spacing(2),
 	marginLeft: 0,
