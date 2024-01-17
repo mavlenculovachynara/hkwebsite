@@ -1,0 +1,132 @@
+/* HomeStyle.css */
+.q {
+    background: #212123;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #191919;
+    margin: 0 auto;
+  }
+  .book-info p {
+    text-align: center;
+    font-size: medium;
+    color: #94089E;
+  }
+  .book-info h3 {
+    margin-bottom: 10px;
+    color: #94089E;
+  }
+  
+  .book-info img {
+    width: 300px;
+    height: auto;
+  }
+  /* .book-info {
+    color: #212123;
+  } */
+  /* HomeStyle.css */
+  
+  /* HomeStyle.css */
+  
+  /* HomeStyle.css */
+  
+  .container-for-books {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .book-item {
+    width: calc(25% - 20px);
+    margin: 5px; /* Уменьшено до 5px */
+    text-align: center;
+    padding-top: 25px;
+    background: #212123;
+  }
+  
+  .book-item img {
+    width: 150px;
+    height: auto;
+  }
+  
+  .pagination {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  .pagination img {
+    width: 30px;
+  }
+  
+  .pagination button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Optional: Style for disabled button */
+  .pagination button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  /* styles.css */
+  /* ! */
+  #book-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #212123;
+  }
+  
+  #book-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #191919;
+    padding-left: 15px;
+  }
+  
+  #book-image {
+    flex: 1;
+  }
+  
+  #book-image img {
+    width: 100%;
+    height: auto;
+  }
+  #book-image2 img {
+    width: 50%;
+  }
+  #book-details img {
+    width: 150px;
+  }
+  #book-details {
+    flex: 2;
+    padding: 20px;
+  }
+  
+  #book-details h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  #book-details h5 {
+    font-size: 20px;
+    color: #666;
+    color: #94089E;
+  }
+  .img2 {
+    width: 250px;
+    padding: 15px;
+  }

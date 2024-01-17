@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: 'black', color: 'white', padding: '40px 0' }}>
+    <footer style={{ backgroundColor: '#191919', color: 'white', padding: '40px 0' }}>
       <Container maxWidth="lg">
         <Grid container spacing={3}>
           {/* Social Icons Container */}
@@ -24,7 +24,7 @@ const Footer = () => {
                   <Typography variant="body2" >Facebook</Typography>
 
                   {/* БЛОК */}
-                  <IconButton href="" target="_blank" style={{ color: 'black' }}>
+                  <IconButton href="" target="_blank" style={{ color: '#191919' }}>
                     <FacebookIcon fontSize="large" />
                   </IconButton>
                   <Typography variant="body2" fontSize={'17'} color={'white'}>Payment Methods:</Typography>
@@ -44,10 +44,10 @@ const Footer = () => {
                   <Typography variant="body2">Twitter</Typography>
 
                 {/*БЛОК  */}
-                <IconButton href="" target="_blank" style={{ color: 'black' }}>
+                <IconButton href="" target="_blank" style={{ color: '#191919' }}>
                     <FacebookIcon fontSize="large" />
                   </IconButton>
-                  <Typography variant="body2" color={'black'}>Facebook</Typography>
+                  <Typography variant="body2" color={'#191919'}>Facebook</Typography>
                   {/*БЛОК  */}
 
 
@@ -65,10 +65,10 @@ const Footer = () => {
                   <Typography variant="body2">Instagram</Typography>
 
                   {/* БЛОК */}
-                  <IconButton href="" target="_blank" style={{ color: 'black' }}>
+                  <IconButton href="" target="_blank" style={{ color: '#191919' }}>
                     <FacebookIcon fontSize="large" />
                   </IconButton>
-                  <Typography variant="body2" color={'black'}>Facebook</Typography>
+                  <Typography variant="body2" color={'#191919'}>Facebook</Typography>
                   {/*БЛОК */}
 
 
@@ -86,10 +86,10 @@ const Footer = () => {
                   <Typography variant="body2">Email</Typography>
 
                  {/* БЛОК */}
-                 <IconButton href="" target="_blank" style={{ color: 'black' }}>
+                 <IconButton href="" target="_blank" style={{ color: '#191919' }}>
                     <FacebookIcon fontSize="large" />
                   </IconButton>
-                  <Typography variant="body2" color={'black'}>Facebook</Typography>
+                  <Typography variant="body2" color={'#191919'}>Facebook</Typography>
                   {/* БЛОК */}
 
 
@@ -133,7 +133,7 @@ const Footer = () => {
             brand names, logos, trademarks, and other materials are the property of their respective owners. Only license
             keys for all gaming platforms: Steam, Uplay, Battle.net, Origin, and others. Profitable, reliable, and fast!
           </Typography>
-          <Typography variant="h6" style={{ marginTop: '10px' }}>
+          <Typography variant="h6" style={{ marginTop: '10px', color: '#94089E' }}>
             LABYRINTH - ваш лучший выбор!
           </Typography>
         </div>
