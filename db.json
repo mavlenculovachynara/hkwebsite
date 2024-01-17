@@ -35,6 +35,14 @@
       "image": "https://img3.labirint.ru/rc/7a25e42c3d7649a9da4dd84063f5b669/363x561q80/books101/1000241/cover.jpg?1704904077",
       "Жанр": "Графические романы",
       "id": 4
+    },
+    {
+      "title": "Преступление и наказание",
+      "genre": "",
+      "description": "",
+      "price": null,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkqHwWslyuvFdOsnncREdnKvekdBHISLLzaA&usqp=CAU",
+      "id": 5
     }
   ],
   "genre": [

@@ -37,7 +37,7 @@ const Cart = () => {
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{cart.books.length > 0 ? (
+					{cart.books && cart.books.length > 0 ? (
 						cart.books.map(elem => (
 							<TableRow key={elem.item.id}>
 								<TableCell component='th' scope='row'>

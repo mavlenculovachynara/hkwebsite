@@ -55,7 +55,7 @@ const CartContextProvider = ({ children }) => {
 		//! Проверяем есть ли уже продукт, который хотим добавить в корзину
 		const bookToFind = cart.books.filter(elem => elem.item.id === book.id)
 		//! Если товар уже добавлен в корзину, то удаляем его из массива cart.products через фильтр, в противном случае добавляем его в cart.products
-		if (bookToFind.length === 0) {
+		if (bookToFind && bookToFind.length === 0) {
 			cart.books.push(newBook)
 		} else {
 			cart.books = cart.books.filter(() => elem => elem.item.id !== book.id)
