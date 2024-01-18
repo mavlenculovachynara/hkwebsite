@@ -133,9 +133,21 @@ const Footer = () => {
             brand names, logos, trademarks, and other materials are the property of their respective owners. Only license
             keys for all gaming platforms: Steam, Uplay, Battle.net, Origin, and others. Profitable, reliable, and fast!
           </Typography>
-          <Typography variant="h6" style={{ marginTop: '10px', color: '#94089E' }}>
-            LABYRINTH - ваш лучший выбор!
-          </Typography>
+         <div style={{display: 'flex', justifyContent:'center' }}>
+         <Typography variant="h6" style={{ marginTop: '10px', color: '#94089E',
+							fontFamily: 'monospace',
+							fontWeight: 600,
+							fontSize: 30,
+							letterSpacing: '.3rem',
+							textDecoration: 'none', }}>
+            LABYRINTH 
+          </Typography><Typography variant="h6" style={{ marginTop: '10px', color: 'white',
+							fontFamily: 'monospace',
+							fontWeight: 600,
+							fontSize: 30,
+							letterSpacing: '.3rem',
+							textDecoration: 'none', }} >   - ваш лучший выбор!</Typography>
+         </div>
         </div>
       </Container>
     </footer>

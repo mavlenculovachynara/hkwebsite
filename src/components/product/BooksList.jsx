@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useBooks } from '../context/BookContextProvider'
-import { Box, TextField, Typography } from '@mui/material'
+import { Box, Pagination, Stack, TextField, Typography } from '@mui/material'
 import BookCard from './BookCard'
 import { useSearchParams } from 'react-router-dom'
 import PaginationControlled from './Pagination'
@@ -28,22 +28,27 @@ const BookList = () => {
 	}
 	console.log(currentData())
 	return (
-		<Box
+		<Box 
 			sx={{
 				display: 'flex',
 				flexWrap: 'wrap',
 				justifyContent: 'center',
 				mt: '25px',
+				backgroundColor: '#191919'
 			}}
 		>
 			{currentData().map(elem => (
 				<BookCard key={elem.id} elem={elem} />
 			))}
-			<PaginationControlled
-				handleChange={handleChange}
-				page={page}
-				count={count}
-			/>
+	 <Stack spacing={2} sx={{ color: 'white' }}>
+      <Pagination
+        count={count}
+        page={page}
+        onChange={handleChange}
+        color="primary"
+      />
+    </Stack>
+
 		</Box>
 	)
 }

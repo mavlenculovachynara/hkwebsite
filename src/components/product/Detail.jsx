@@ -16,9 +16,9 @@ const Detail = props => {
 		left: '30%',
 		width: 700,
 		display: 'flex',
-		border: '2px solid black',
+		border: '2px solid #94089E',
 		boxShadow: 24,
-		backgroundColor: 'white',
+		backgroundColor: '#212123',
 		padding: '16px',
 		borderRadius: '4px',
 	}
@@ -40,7 +40,7 @@ const Detail = props => {
 				<div>
 					<img width={250} src={elem.image} alt={elem.title} />
 				</div>
-				<div style={{ marginLeft: '16px' }}>
+				<div style={{ marginLeft: '16px', color:'white' }}>
 					<h1>{elem.title}</h1>
 					<p>{elem.description}</p>
 					<p>{elem.genre}</p>
@@ -48,14 +48,14 @@ const Detail = props => {
 				<div style={{ marginTop: 'auto', marginLeft: 'auto' }}>
 					<Button onChange={handleAddToFavorite}>
 						<Checkbox
-							icon={<BookmarkBorder />}
+							icon={<BookmarkBorder style={{ color: 'white' }} />}
 							checkedIcon={
-								<Bookmark color={isBookInFavorite ? 'black' : 'white'} />
+								<Bookmark color={isBookInFavorite ? '#94089E' : 'white'} />
 							}
 						/>
 					</Button>
 					{checkBookInCart(elem.id) ? (
-						<Button variant='contained' disabled>
+						<Button color='primary' variant='contained' disabled>
 							Добавлено в корзину
 						</Button>
 					) : (

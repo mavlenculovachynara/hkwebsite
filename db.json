@@ -38,11 +38,504 @@
     },
     {
       "title": "Преступление и наказание",
-      "genre": "",
-      "description": "",
-      "price": null,
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkqHwWslyuvFdOsnncREdnKvekdBHISLLzaA&usqp=CAU",
+      "genre": "романы",
+      "description": "Ф. Достаевский",
+      "price": "680",
+      "image": "https://img4.labirint.ru/rc/3fc244fa9506b6a7f285609d975da876/363x561q80/books83/820808/cover.jpg?1631359560",
       "id": 5
+    },
+    {
+      "title": "Превращение",
+      "genre": "повесть",
+      "description": "Франц Кафка",
+      "price": 600,
+      "image": "https://cdn.azbooka.ru/cv/w1100/221a1d96-2e97-4ae5-9586-ba564cc95cbc.jpg",
+      "id": 6
+    },
+    {
+      "title": "Осколки детских травм",
+      "genre": "психология",
+      "description": "Донна Джексон Наказава",
+      "price": 745,
+      "image": "https://cdn1.ozone.ru/s3/multimedia-u/6008516982.jpg",
+      "id": 7
+    },
+    {
+      "title": "Погружение в себя",
+      "genre": "",
+      "description": "Владислав Чубаров",
+      "price": 680,
+      "image": "https://psyfactor.org/lib/i/chubarov.jpg",
+      "Жанр": "психология",
+      "id": 8
+    },
+    {
+      "title": "Психология и анализ человеческого \"я\".",
+      "genre": "психология",
+      "description": "Зигмунд Фрейд",
+      "price": 730,
+      "image": "https://www.moscowbooks.ru/image/book/602/orig/i602943.jpg?cu=20180101000000",
+      "Жанр": "психология",
+      "id": 9
+    },
+    {
+      "title": "Кокон",
+      "genre": "",
+      "description": "Чжан Юэжань",
+      "price": 780,
+      "image": "https://www.litres.ru/pub/c/cover/64885801.jpg",
+      "Жанр": "психология",
+      "id": 10
+    },
+    {
+      "title": "Лолита",
+      "genre": "",
+      "description": "Владимир Нобаков",
+      "price": 680,
+      "image": "https://gorky.media/wp-content/uploads/2019/10/3_Jennifer-Heuer.png",
+      "Жанр": "психология",
+      "id": 11
+    },
+    {
+      "title": "Выбор",
+      "genre": "",
+      "description": "Ева Эгер",
+      "price": 820,
+      "image": "https://m.media-amazon.com/images/I/41NclIn0NvL.jpg",
+      "Жанр": "психология",
+      "id": 12
+    },
+    {
+      "title": "Комната бабочек",
+      "genre": "",
+      "description": "Люсинда Райли",
+      "price": 780,
+      "image": "https://img3.labirint.ru/rc/8ea4a43e274ce508210f86a4a4d66c15/363x561q80/books82/811859/cover.jpg?1682508483",
+      "Жанр": "Драма",
+      "id": 13
+    },
+    {
+      "title": "Учитель драмы - Корен Зайлцкас",
+      "genre": "",
+      "description": "Корен Зайцкас",
+      "price": 760,
+      "image": "https://www.colibribookstore.com/media/catalog/product/cache/2/image/600x600/9df78eab33525d08d6e5fb8d27136e95/k/n/kniga-uchitel-drami-koren-zajlckas.jpg",
+      "Жанр": "романы",
+      "id": 14
+    },
+    {
+      "title": "Слово пацана",
+      "genre": "Криминалогия",
+      "description": "Роберт Гараев",
+      "price": "750",
+      "image": "https://cv1.litres.ru/pub/c/cover_330/70206010.webp",
+      "Жанр": "Драма",
+      "id": 15
+    },
+    {
+      "title": "Конец режима",
+      "genre": "Драма",
+      "description": "Алекса́ндр Ге́рманович Ба́унов",
+      "price": 850,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmGuo3E5OJLXx9UVZzWXPa6toRSxxZg9QypcDsFe90U9BDaoHYA1kgtRx7gB1h6DlUQQk&usqp=CAU",
+      "Жанр": "Драма",
+      "id": 16
+    },
+    {
+      "title": "Кости сердца",
+      "genre": "романы",
+      "description": "Колин Гувер",
+      "price": "780",
+      "image": "https://cv6.litres.ru/pub/c/cover_330/70087669.webp",
+      "Жанр": "Драма",
+      "id": 17
+    },
+    {
+      "title": "Чего хочет мой ребенок",
+      "genre": "психология",
+      "description": "Мона Делахук",
+      "price": "620",
+      "image": "https://cv5.litres.ru/pub/c/cover_330/70201558.webp",
+      "Жанр": "Драма",
+      "id": 18
+    },
+    {
+      "title": "Семь лет в «Крестах»",
+      "genre": "Криминалогия",
+      "description": "Алексей Гавриш",
+      "price": 850,
+      "image": "https://cv0.litres.ru/pub/c/cover_330/70201003.webp",
+      "Жанр": "Драма",
+      "id": 19
+    },
+    {
+      "title": "Волшебник",
+      "genre": "фантастика",
+      "description": "Андрей Землянов",
+      "price": "680",
+      "image": "https://cv1.litres.ru/pub/c/cover_330/70256917.webp",
+      "Жанр": "Драма",
+      "id": 20
+    },
+    {
+      "title": "Кудесник",
+      "genre": "фантастика",
+      "description": "Андрей Земляной",
+      "price": "680",
+      "image": "https://cv2.litres.ru/pub/c/cover_330/70256920.webp",
+      "Жанр": "Драма",
+      "id": 21
+    },
+    {
+      "title": "Не вычеркивай меня из списка…",
+      "genre": "психология",
+      "description": "Дина Рубина",
+      "price": "399",
+      "image": "https://cv3.litres.ru/pub/c/cover_330/69980839.webp",
+      "Жанр": "Драма",
+      "id": 22
+    },
+    {
+      "title": "Король ужасов",
+      "genre": "Триллер",
+      "description": "Стивен Кинг",
+      "price": "670",
+      "image": "https://cv2.litres.ru/pub/c/cover_330/48586322.webp",
+      "Жанр": "Драма",
+      "id": 23
+    },
+    {
+      "title": " Безумец с множеством лиц",
+      "genre": "биография",
+      "description": "Стивен Дейли",
+      "price": "780",
+      "image": "https://cv1.litres.ru/pub/c/cover_330/63018612.webp",
+      "Жанр": "Драма",
+      "id": 24
+    },
+    {
+      "title": "Божественная комедия. Рай",
+      "genre": "комедия",
+      "description": "Данте Алигьери",
+      "price": "690",
+      "image": "https://cv3.litres.ru/pub/c/cover_330/11656932.webp",
+      "Жанр": "Драма",
+      "id": 25
+    },
+    {
+      "title": "Мой театр",
+      "genre": "биография",
+      "description": "Николай Цискаридзе",
+      "price": "550",
+      "image": "https://cv8.litres.ru/pub/c/cover_330/68005088.webp",
+      "Жанр": "Драма",
+      "id": 26
+    },
+    {
+      "title": "Склероз, рассеянный по жизни",
+      "genre": "биография",
+      "description": "Александр Ширвиндт",
+      "price": "770",
+      "image": "https://cv2.litres.ru/pub/c/cover_330/8439327.webp",
+      "Жанр": "Драма",
+      "id": 27
+    },
+    {
+      "title": "Божественная матрица",
+      "genre": "психология",
+      "description": "Грегг Брейден",
+      "price": 850,
+      "image": "https://cv0.litres.ru/pub/c/cover_330/39962700.webp",
+      "Жанр": "Драма",
+      "id": 28
+    },
+    {
+      "title": "Кто в списке у судьи?",
+      "genre": "детектив",
+      "description": "Джон Гришэм",
+      "price": "770",
+      "image": "https://cv0.litres.ru/pub/c/cover_330/70190308.webp",
+      "Жанр": "Драма",
+      "id": 29
+    },
+    {
+      "title": "Бронепароходы",
+      "genre": "романы",
+      "description": "Алексей Иванов",
+      "price": "650",
+      "image": "https://cv9.litres.ru/pub/c/cover_330/69472195.webp",
+      "Жанр": "Драма",
+      "id": 30
+    },
+    {
+      "title": "Стереть из памяти",
+      "genre": "детектив",
+      "description": "Людмила Маратова",
+      "price": "320",
+      "image": "https://cv2.litres.ru/pub/c/cover_330/69981625.webp",
+      "Жанр": "Драма",
+      "id": 31
+    },
+    {
+      "title": "Чагин",
+      "genre": "психология",
+      "description": "Евгений Водолазкин",
+      "price": "490",
+      "image": "https://cv2.litres.ru/pub/c/cover_330/68322223.webp",
+      "Жанр": "Драма",
+      "id": 32
+    },
+    {
+      "title": "Звездная Кровь-5. Вечность",
+      "genre": "фантастика",
+      "description": "Роман Прокорьеф",
+      "price": "220",
+      "image": "https://cv1.litres.ru/pub/c/cover_330/69701716.webp",
+      "Жанр": "Драма",
+      "id": 33
+    },
+    {
+      "title": "Задача трех тел",
+      "genre": "фантастика",
+      "description": "Лю Сыцинь",
+      "price": "420",
+      "image": "https://cv5.litres.ru/pub/c/cover_330/24427853.webp",
+      "Жанр": "Драма",
+      "id": 34
+    },
+    {
+      "title": "Скрытые намерения",
+      "genre": "детектив",
+      "description": "Марк Омер",
+      "price": "460",
+      "image": "https://cv1.litres.ru/pub/c/cover_330/69282019.webp",
+      "Жанр": "Драма",
+      "id": 35
+    },
+    {
+      "title": "Полтора года жизни",
+      "genre": "романы",
+      "description": "Anne Der",
+      "price": 850,
+      "image": "https://cv2.litres.ru/pub/c/cover_330/67259723.webp",
+      "Жанр": "Драма",
+      "id": 36
+    },
+    {
+      "title": "Ревизор: возвращение в СССР",
+      "genre": "детектив",
+      "description": "Артем Шумилев",
+      "price": "230",
+      "image": "https://cv9.litres.ru/pub/c/cover_330/70106692.webp",
+      "Жанр": "Драма",
+      "id": 37
+    },
+    {
+      "title": "Психотерапевт",
+      "genre": "Триллер",
+      "description": "Б. Э Пэрис",
+      "price": "330",
+      "image": "https://cv8.litres.ru/pub/c/cover_330/70208686.webp",
+      "Жанр": "Драма",
+      "id": 38
+    },
+    {
+      "title": "Сцена после титров",
+      "genre": "Триллер",
+      "description": "Алексей Корнелюк",
+      "price": "690",
+      "image": "https://cv4.litres.ru/pub/c/cover_330/69944749.webp",
+      "Жанр": "Драма",
+      "id": 39
+    },
+    {
+      "title": "Опасные земли",
+      "genre": "Триллер",
+      "description": "Клим Жуков",
+      "price": "450",
+      "image": "https://cv2.litres.ru/pub/c/cover_330/69587125.webp",
+      "Жанр": "Драма",
+      "id": 40
+    },
+    {
+      "title": "Ночь в Лиссабоне",
+      "genre": "повесть",
+      "description": "Эрик Мария Ремарк",
+      "price": 850,
+      "image": "https://cv4.litres.ru/pub/c/cover_330/27061646.webp",
+      "Жанр": "Драма",
+      "id": 41
+    },
+    {
+      "title": "Процесс",
+      "genre": "повесть",
+      "description": "Франц Кафка",
+      "price": "540",
+      "image": "https://cv4.litres.ru/pub/c/cover_330/68486848.webp",
+      "Жанр": "Драма",
+      "id": 42
+    },
+    {
+      "title": "Биография Кришнамурти",
+      "genre": "биография",
+      "description": "Пупул Джаякар",
+      "price": "810",
+      "image": "https://cv2.litres.ru/pub/c/cover_330/51980422.webp",
+      "Жанр": "Драма",
+      "id": 43
+    },
+    {
+      "title": "Бандит",
+      "genre": "Криминалогия",
+      "description": "Евгений Щепотнов",
+      "price": 850,
+      "image": "https://cv6.litres.ru/pub/c/cover_330/67741167.webp",
+      "Жанр": "Драма",
+      "id": 44
+    },
+    {
+      "title": "Безлюдное место",
+      "genre": "Криминалогия",
+      "description": "Саша Сулим",
+      "price": "180",
+      "image": "https://cv1.litres.ru/pub/c/cover_330/63123111.webp",
+      "Жанр": "Драма",
+      "id": 45
+    },
+    {
+      "title": "Убийство в кукольном доме.",
+      "genre": "Криминалогия",
+      "description": "Алекса́ндр Ге́рманович Ба́унов",
+      "price": "420",
+      "image": "https://cv8.litres.ru/pub/c/cover_330/68022086.webp",
+      "Жанр": "Драма",
+      "id": 46
+    },
+    {
+      "title": "Белый пароход",
+      "genre": "повесть",
+      "description": "Чингиз Айтматов",
+      "price": "220",
+      "image": "https://cv7.litres.ru/pub/c/cover_330/132370.webp",
+      "Жанр": "Драма",
+      "id": 47
+    },
+    {
+      "title": "Повесть о Предславе",
+      "genre": "повесть",
+      "description": "Олег Яковлев",
+      "price": "220",
+      "image": "https://cv1.litres.ru/pub/c/cover_330/48687614.webp",
+      "Жанр": "Драма",
+      "id": 48
+    },
+    {
+      "title": "Носорог",
+      "genre": "Драма",
+      "description": "Эжен Ионеско",
+      "price": "180",
+      "image": "https://cv2.litres.ru/pub/c/cover_330/7439725.webp",
+      "Жанр": "Драма",
+      "id": 49
+    },
+    {
+      "title": "Конец режима",
+      "genre": "",
+      "description": "Алекса́ндр Ге́рманович Ба́унов",
+      "price": 850,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmGuo3E5OJLXx9UVZzWXPa6toRSxxZg9QypcDsFe90U9BDaoHYA1kgtRx7gB1h6DlUQQk&usqp=CAU",
+      "Жанр": "Драма",
+      "id": 50
+    },
+    {
+      "title": "Конец режима",
+      "genre": "",
+      "description": "Алекса́ндр Ге́рманович Ба́унов",
+      "price": 850,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmGuo3E5OJLXx9UVZzWXPa6toRSxxZg9QypcDsFe90U9BDaoHYA1kgtRx7gB1h6DlUQQk&usqp=CAU",
+      "Жанр": "Драма",
+      "id": 51
+    },
+    {
+      "title": "Конец режима",
+      "genre": "",
+      "description": "Алекса́ндр Ге́рманович Ба́унов",
+      "price": 850,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmGuo3E5OJLXx9UVZzWXPa6toRSxxZg9QypcDsFe90U9BDaoHYA1kgtRx7gB1h6DlUQQk&usqp=CAU",
+      "Жанр": "Драма",
+      "id": 52
+    },
+    {
+      "title": "Конец режима",
+      "genre": "",
+      "description": "Алекса́ндр Ге́рманович Ба́унов",
+      "price": 850,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmGuo3E5OJLXx9UVZzWXPa6toRSxxZg9QypcDsFe90U9BDaoHYA1kgtRx7gB1h6DlUQQk&usqp=CAU",
+      "Жанр": "Драма",
+      "id": 53
+    },
+    {
+      "title": "Конец режима",
+      "genre": "",
+      "description": "Алекса́ндр Ге́рманович Ба́унов",
+      "price": 850,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmGuo3E5OJLXx9UVZzWXPa6toRSxxZg9QypcDsFe90U9BDaoHYA1kgtRx7gB1h6DlUQQk&usqp=CAU",
+      "Жанр": "Драма",
+      "id": 54
+    },
+    {
+      "title": "Конец режима",
+      "genre": "",
+      "description": "Алекса́ндр Ге́рманович Ба́унов",
+      "price": 850,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmGuo3E5OJLXx9UVZzWXPa6toRSxxZg9QypcDsFe90U9BDaoHYA1kgtRx7gB1h6DlUQQk&usqp=CAU",
+      "Жанр": "Драма",
+      "id": 55
+    },
+    {
+      "title": "Конец режима",
+      "genre": "",
+      "description": "Алекса́ндр Ге́рманович Ба́унов",
+      "price": 850,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmGuo3E5OJLXx9UVZzWXPa6toRSxxZg9QypcDsFe90U9BDaoHYA1kgtRx7gB1h6DlUQQk&usqp=CAU",
+      "Жанр": "Драма",
+      "id": 56
+    },
+    {
+      "title": "Конец режима",
+      "genre": "",
+      "description": "Алекса́ндр Ге́рманович Ба́унов",
+      "price": 850,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmGuo3E5OJLXx9UVZzWXPa6toRSxxZg9QypcDsFe90U9BDaoHYA1kgtRx7gB1h6DlUQQk&usqp=CAU",
+      "Жанр": "Драма",
+      "id": 57
+    },
+    {
+      "title": "Конец режима",
+      "genre": "",
+      "description": "Алекса́ндр Ге́рманович Ба́унов",
+      "price": 850,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmGuo3E5OJLXx9UVZzWXPa6toRSxxZg9QypcDsFe90U9BDaoHYA1kgtRx7gB1h6DlUQQk&usqp=CAU",
+      "Жанр": "Драма",
+      "id": 58
+    },
+    {
+      "title": "Конец режима",
+      "genre": "",
+      "description": "Алекса́ндр Ге́рманович Ба́унов",
+      "price": 850,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmGuo3E5OJLXx9UVZzWXPa6toRSxxZg9QypcDsFe90U9BDaoHYA1kgtRx7gB1h6DlUQQk&usqp=CAU",
+      "Жанр": "Драма",
+      "id": 59
+    },
+    {
+      "title": "Конец режима",
+      "genre": "",
+      "description": "Алекса́ндр Ге́рманович Ба́унов",
+      "price": 850,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmGuo3E5OJLXx9UVZzWXPa6toRSxxZg9QypcDsFe90U9BDaoHYA1kgtRx7gB1h6DlUQQk&usqp=CAU",
+      "Жанр": "Драма",
+      "id": 60
     }
   ],
   "genre": [
@@ -59,12 +552,32 @@
       "id": 3
     },
     {
-      "name": "комедия",
-      "id": 4
-    },
-    {
       "name": "романы",
       "id": 5
+    },
+    {
+      "name": "повесть",
+      "id": 6
+    },
+    {
+      "name": "психология",
+      "id": 7
+    },
+    {
+      "name": "Криминалогия",
+      "id": 8
+    },
+    {
+      "name": "фантастика",
+      "id": 9
+    },
+    {
+      "name": "биография",
+      "id": 10
+    },
+    {
+      "name": "детектив",
+      "id": 11
     }
   ],
   "favorites": []
