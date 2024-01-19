@@ -26,33 +26,37 @@ const Favorite = () => {
 
 	return (
 		<div>
-			<TableContainer>
+			<TableContainer sx={{ backgroundColor: "#212123", color: "#FFFFFF" }}>
 				<Table sx={{ minWidth: 650 }} aria-label='simple table'>
 					<TableHead>
 						<TableRow>
-							<TableCell>Фото</TableCell>
-							<TableCell>Название</TableCell>
-							<TableCell>Жанр</TableCell>
-							<TableCell>Цена</TableCell>
-							<TableCell>Удалить с заметок</TableCell>
+							<TableCell sx={{ backgroundColor: "#212123", color: "white" }}>Фото</TableCell>
+							<TableCell sx={{ backgroundColor: "#212123", color: "white" }}>Название</TableCell>
+							<TableCell sx={{ backgroundColor: "#212123", color: "white" }}>Жанр</TableCell>
+							<TableCell sx={{ backgroundColor: "#212123", color: "white" }}>Цена</TableCell>
+							<TableCell sx={{ backgroundColor: "#212123", color: "white" }}>Удалить с заметок</TableCell>
 						</TableRow>
 					</TableHead>
 					<TableBody>
 						{favorite.books && favorite.books.length > 0 ? (
 							favorite.books.map(elem => (
 								<TableRow key={elem.item.id}>
-									<TableCell component='th' scope='row'>
+									<TableCell sx={{ backgroundColor: "#212123", color: "white"}} component='th' scope='row'>
 										{elem.item.id && (
 											<img width={'70'} src={elem.item.image} alt='' />
 										)}
 									</TableCell>
-									<TableCell>{elem.item.title}</TableCell>
-									<TableCell>{elem.item.genre}</TableCell>
-									<TableCell>{elem.item.price}</TableCell>
+									<TableCell sx={{ backgroundColor: "#212123", color: " #6c3eb8 " }}>{elem.item.title}</TableCell>
+									<TableCell sx={{ backgroundColor: "#212123", color: "white"}}>{elem.item.genre}</TableCell>
+									<TableCell sx={{ backgroundColor: "#212123", color: "white"}}>{elem.item.price}</TableCell>
 									<TableCell>
 										<Button
 											variant='contained'
 											onClick={() => deleteBookFromFavorite(elem.item.id)}
+											sx={{
+												backgroundColor: "rgb(108, 62, 184)",
+												color: "#FFFFFF",
+											  }}
 										>
 											Удалить
 										</Button>

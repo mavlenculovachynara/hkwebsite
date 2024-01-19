@@ -473,6 +473,33 @@
       "image": "https://ndc.book24.ru/resize/820x1180/iblock/cb5/cb5ca09f4841b8a7e420e8157a3d8cab/2e4191e9e18bef68676e80eb78c88a3d.jpg",
       "Жанр": "Графические романы",
       "id": 56
+    },
+    {
+      "title": "gfjhgdthfg",
+      "genre": "",
+      "description": "dfhjhg",
+      "price": null,
+      "image": "gfhjgfhg",
+      "Жанр": "Драма",
+      "id": 57
+    },
+    {
+      "title": "mewkvmkvrmw",
+      "genre": "",
+      "description": "regtwge",
+      "price": null,
+      "image": "https://web-zoopark.ru/wp-content/uploads/2018/07/4-42.jpg",
+      "Жанр": "Драма",
+      "id": 58
+    },
+    {
+      "title": "rewy",
+      "genre": "",
+      "description": "etyr",
+      "price": 324132,
+      "image": "https://web-zoopark.ru/wp-content/uploads/2018/07/4-42.jpg",
+      "Жанр": "Драма",
+      "id": 59
     }
   ],
   "genre": [
@@ -517,5 +544,5 @@
       "id": 11
     }
   ],
-  "favorites": []
+  "comments": []
 }

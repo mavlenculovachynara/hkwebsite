@@ -26,9 +26,9 @@ import { useEffect } from 'react';
 import { useBooks } from '../context/BookContextProvider';
 import { useState } from 'react';
 const pages = [
-	{ id: 1, title: 'Книги', link: '/books' },
-	{ id: 2, title: 'About', link: '/about' },
-	{ id: 3, title: 'Contacts', link: '/contacts' },
+	{ id: 1, title: 'Каталог', link: '/books' },
+	{ id: 2, title: 'О нас', link: '/about' },
+	// { id: 3, title: 'Contacts', link: '/contacts' },
 ]
 
 const Search = styled('div')(({ theme }) => ({
