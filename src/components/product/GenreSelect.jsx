@@ -13,9 +13,9 @@ const GenreSelect = props => {
 			<FormControl fullWidth>
 				<InputLabel id='demo-simple-select-label'>Жанр</InputLabel>
 				<Select
-					label='Genre'
+					label='Жанр'
 					defaultValue={''}
-					name='Жанр'
+					name='Genre'
 					id='demo-simple-select-label'
 					labelId='demo-simple-select-label'
 					onChange={handleInput}

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+
 import {
 	Button,
 	Table,
@@ -8,19 +9,20 @@ import {
 	TableHead,
 	TableRow,
 } from '@mui/material'
+
 import { useFavorite } from '../context/FavoriteContextProvider'
 
 const Favorite = () => {
 	const { favorite, getFavorite, deleteBookFromFavorite } = useFavorite()
 
-	useEffect(() => {
-		getFavorite()
-	}, [])
-
 	const favCleaner = () => {
 		localStorage.removeItem('favorite')
 		getFavorite()
 	}
+
+	useEffect(() => {
+		getFavorite()
+	}, [])
 
 	return (
 		<div>
@@ -36,15 +38,17 @@ const Favorite = () => {
 						</TableRow>
 					</TableHead>
 					<TableBody>
-						{favorite && favorite.length > 0 ? (
-							favorite.map(elem => (
+						{favorite.books && favorite.books.length > 0 ? (
+							favorite.books.map(elem => (
 								<TableRow key={elem.item.id}>
 									<TableCell component='th' scope='row'>
-										<img width={'70'} src={elem.item.image} alt='' />
+										{elem.item.id && (
+											<img width={'70'} src={elem.item.image} alt='' />
+										)}
 									</TableCell>
-									<TableCell>{elem.item?.title}</TableCell>
-									<TableCell>{elem.item?.genre}</TableCell>
-									<TableCell>{elem.item?.price}</TableCell>
+									<TableCell>{elem.item.title}</TableCell>
+									<TableCell>{elem.item.genre}</TableCell>
+									<TableCell>{elem.item.price}</TableCell>
 									<TableCell>
 										<Button
 											variant='contained'

@@ -95,6 +95,8 @@ const EditBook = () => {
 				variant='outlined'
 			/>
 			<Button
+				navigate
+				to={'/books'}
 				onClick={() => editBook(id, product)}
 				fullWidth
 				variant='contained'

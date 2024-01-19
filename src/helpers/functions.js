@@ -1,9 +1,7 @@
 //! Функция для получения данных из хранилища под ключом cart
 export const getLocalStorage = () => {
 	const cart = JSON.parse(localStorage.getItem('cart'))
-	// const favorite = JSON.parse(localStorage.getItem('favorite'))
 	return cart
-	// return favorite
 }
 //! Функция для подсчёта всех товаров
 export const calcTotalPrice = books => {

@@ -1,24 +1,30 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+
 import './index.css'
 import App from './App'
-import { BrowserRouter } from 'react-router-dom'
-import ProductContextProvider from './components/context/BookContextProvider'
+
 import CartContextProvider from './components/context/CartContextProvider'
 import AuthContextProvider from './components/context/AuthContextProvider'
-import { FavoriteProvider } from './components/context/FavoriteContextProvider'
+import FavoriteContextProvider from './components/context/FavoriteContextProvider'
+import CommentContextProvider from './components/context/CommentContextProvider'
+import BookContextProvider from './components/context/BookContextProvider'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
+
 root.render(
 	<BrowserRouter>
 		<AuthContextProvider>
-			<ProductContextProvider>
+			<BookContextProvider>
 				<CartContextProvider>
-					<FavoriteProvider>
-						<App />
-					</FavoriteProvider>
+					<FavoriteContextProvider>
+						<CommentContextProvider>
+							<App />
+						</CommentContextProvider>
+					</FavoriteContextProvider>
 				</CartContextProvider>
-			</ProductContextProvider>
+			</BookContextProvider>
 		</AuthContextProvider>
 	</BrowserRouter>
 )

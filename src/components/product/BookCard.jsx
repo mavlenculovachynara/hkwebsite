@@ -1,39 +1,78 @@
+import React, { useEffect, useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import {
+	Button,
 	Card,
 	CardActionArea,
 	CardContent,
 	CardMedia,
 	Checkbox,
+	Dialog,
+	DialogActions,
+	DialogContent,
+	DialogTitle,
+	Divider,
+	FormControl,
 	IconButton,
-	Rating,
-	Stack,
+	TextField,
 	Typography,
 } from '@mui/material'
+import ThumbUpOffAltOutlinedIcon from '@mui/icons-material/ThumbUpOffAltOutlined'
 import EditIcon from '@mui/icons-material/Edit'
-import React, { useState } from 'react'
+import AddShoppingCart from '@mui/icons-material/AddShoppingCart'
+import Bookmark from '@mui/icons-material/Bookmark'
+import BookmarkBorder from '@mui/icons-material/BookmarkBorder'
+import DeleteOutline from '@mui/icons-material/DeleteOutline'
+import CommentBankOutlinedIcon from '@mui/icons-material/CommentBankOutlined'
+
 import { useBooks } from '../context/BookContextProvider'
-import { useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContextProvider'
-import {
-	AddShoppingCart,
-	Bookmark,
-	BookmarkBorder,
-	DeleteOutline,
-} from '@mui/icons-material'
-import Detail from './Detail'
 import { useFavorite } from '../context/FavoriteContextProvider'
 import { useAuth } from '../context/AuthContextProvider'
+import { useComment } from '../context/CommentContextProvider'
+import Detail from './Detail'
 
 const BookCard = ({ elem }) => {
-	const navigate = useNavigate()
-	const { deleteBook } = useBooks()
-	const { addBookToCart } = useCart()
-	const { user } = useAuth()
-	const { addBookToFavorite } = useFavorite()
+	const [isLiked, setLiked] = useState(false)
+	const [likeCount, setLikeCount] = useState(0)
+	const [commentText, setCommentText] = useState('')
+	const [isCommentModalOpen, setIsCommentModalOpen] = useState(false)
 	const [open, setOpen] = useState(false)
+
+	const likeRef = useRef(localStorage.getItem(`like-${elem.id}`) === 'true')
+	const likeCountRef = useRef(
+		Number(localStorage.getItem(`likeCount-${elem.id}`)) || 0
+	)
+
+	const { user, admin } = useAuth()
+	const { addBookToCart } = useCart()
+	const { deleteBook } = useBooks()
+	const { addComment } = useComment()
+	const { addBookToFavorite } = useFavorite()
+
+	const navigate = useNavigate()
 
 	const handleOpen = () => setOpen(true)
 	const handleClose = () => setOpen(false)
+
+	const handleLike = () => {
+		if (user) {
+			const updatedLike = !isLiked
+			setLiked(updatedLike)
+			setLikeCount(prevCount => (updatedLike ? prevCount + 1 : prevCount - 1))
+			likeRef.current = updatedLike
+			likeCountRef.current = likeCountRef.current + (updatedLike ? 1 : -1)
+
+			localStorage.setItem(`like-${elem.id}`, updatedLike)
+			localStorage.setItem(
+				`likeCount-${elem.id}`,
+				likeCountRef.current.toString()
+			)
+		} else {
+			alert('Только зарегистрированные пользователи могут ставить лайки!')
+		}
+	}
 
 	const handleDeleteBook = () => {
 		const confirmDelete = window.confirm(
@@ -43,6 +82,33 @@ const BookCard = ({ elem }) => {
 			deleteBook(elem.id)
 		}
 	}
+
+	const handleAddToComment = () => {
+		if (commentText.trim() !== '') {
+			addComment({ objectId: elem.id, text: commentText })
+			setIsCommentModalOpen(false)
+			setCommentText('')
+		} else {
+			console.log('Текст отзыва пуст.')
+		}
+	}
+
+	const handleOpenCommentModal = () => {
+		if (user) {
+			setIsCommentModalOpen(true)
+		} else {
+			alert('Только зарегистрированные пользователи могут оставлять отзывы!')
+		}
+	}
+
+	const handleCloseCommentModal = () => {
+		setIsCommentModalOpen(false)
+	}
+
+	useEffect(() => {
+		setLiked(user ? likeRef.current : false)
+		setLikeCount(likeCountRef.current)
+	}, [user])
 
 	return (
 		<Card
@@ -72,40 +138,85 @@ const BookCard = ({ elem }) => {
 				<Typography color='black' fontSize='24px' fontWeight={700}>
 					{elem.price}KGS
 				</Typography>
-				<Stack spacing={1} margin='8px 0' sx={{ width: '120px' }}>
-					<Rating name='haf-rating' defaultValue={0} precision={1} />
-				</Stack>
-				<IconButton
-					color='primary'
-					onClick={() => addBookToCart(elem)}
-					sx={{ marginLeft: '8px' }}
-				>
+				<br />
+				<Divider />
+				<IconButton onClick={() => addBookToCart(elem)}>
 					<AddShoppingCart />
 				</IconButton>
-				<Checkbox
-					icon={<BookmarkBorder />}
-					checkedIcon={<Bookmark color='primary' />}
-					onClick={() => addBookToFavorite(elem)}
-				/>
-				{user && (
+				<IconButton
+					onClick={() => {
+						addBookToFavorite(elem)
+					}}
+				>
+					<Checkbox icon={<BookmarkBorder />} checkedIcon={<Bookmark />} />
+				</IconButton>
+				<IconButton onClick={handleOpenCommentModal}>
+					<CommentBankOutlinedIcon />
+				</IconButton>
+				<IconButton
+					onClick={() => {
+						handleLike()
+					}}
+				>
+					<ThumbUpOffAltOutlinedIcon
+						sx={{ color: isLiked ? 'red' : 'inherit' }}
+					/>
+					<Typography variant='subtitle2'>{likeCount}</Typography>
+				</IconButton>
+				<Dialog
+					open={isCommentModalOpen}
+					onClose={handleCloseCommentModal}
+					aria-labelledby='form-dialog-title'
+				>
+					<DialogTitle id='form-dialog-title'>Отзыв:</DialogTitle>
+					<DialogContent>
+						<FormControl fullWidth>
+							<TextField
+								autoFocus
+								margin='dense'
+								id='commentText'
+								label='Отзыв'
+								type='text'
+								multiline
+								rows={5}
+								value={commentText}
+								onChange={e => setCommentText(e.target.value)}
+								fullWidth
+							/>
+						</FormControl>
+					</DialogContent>
+					<DialogActions>
+						<Button
+							onClick={handleCloseCommentModal}
+							color='primary'
+							variant='contained'
+						>
+							Отмена
+						</Button>
+						<Button
+							onClick={handleAddToComment}
+							color='primary'
+							variant='contained'
+						>
+							Добавить
+						</Button>
+					</DialogActions>
+				</Dialog>
+				{admin && (
 					<>
-						<IconButton
-							className='delete-btn'
-							onClick={handleDeleteBook}
-							variant='contained'
-							color='secondary'
-							sx={{ marginLeft: '8px' }}
-						>
-							<DeleteOutline />
+						<IconButton onClick={handleDeleteBook}>
+							<DeleteOutline
+								className='delete-btn'
+								variant='contained'
+								color='secondary'
+							/>
 						</IconButton>
-						<IconButton
-							className='edit-btn'
-							onClick={() => navigate(`/edit/${elem.id}`)}
-							variant='contained'
-							color='secondary'
-							sx={{ marginLeft: '8px' }}
-						>
-							<EditIcon />
+						<IconButton onClick={() => navigate(`/edit/${elem.id}`)}>
+							<EditIcon
+								className='edit-btn'
+								variant='contained'
+								color='secondary'
+							/>
 						</IconButton>
 					</>
 				)}

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { Navigate, Route, Routes } from 'react-router-dom'
+
 import Home from '../pages/Home'
 import BookPage from '../pages/BookPage'
 import About from '../pages/About'
@@ -8,12 +10,11 @@ import Cart from '../pages/Cart'
 import AuthPage from '../pages/AuthPage'
 import Admin from '../pages/Admin'
 import EditPage from '../pages/EditPage'
-// import FavoritePage from '../pages/FavoritePage'
-import { Navigate, Route, Routes } from 'react-router-dom'
-import { ADMIN } from '../helpers/const'
-import { useAuth } from '../components/context/AuthContextProvider'
 import FavoritePage from '../pages/FavoritePage'
-import Delete from '../components/product/Delete'
+import CommentPage from './../pages/CommentPage'
+
+import { useAuth } from '../components/context/AuthContextProvider'
+import { ADMIN } from '../helpers/const'
 
 const MainRoutes = () => {
 	const PUBLIC_ROUTES = [
@@ -24,11 +25,11 @@ const MainRoutes = () => {
 		{ id: 5, link: '/cart', element: <Cart /> },
 		{ id: 6, link: '/favorite', element: <FavoritePage /> },
 		{ id: 7, link: '/auth', element: <AuthPage /> },
+		{ id: 8, link: '/comments', element: <CommentPage /> },
 	]
 	const PRIVATE_ROUTES = [
-		{ id: 8, link: '/admin', element: <Admin /> },
-		{ id: 9, link: '/edit/:id', element: <EditPage /> },
-		{ id: 10, link: '/delete/:id', element: <Delete /> },
+		{ id: 9, link: '/admin', element: <Admin /> },
+		{ id: 10, link: '/edit/:id', element: <EditPage /> },
 	]
 	const { user } = useAuth()
 	return (

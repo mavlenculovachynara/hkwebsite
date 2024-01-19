@@ -2,9 +2,9 @@
   "books": [
     {
       "title": "Jujutsu Kaisen v10",
-      "genre": "Графические романы",
+      "genre": "Триллер",
       "description": "Акутами Гэгэ",
-      "price": 1248,
+      "price": "1250",
       "image": "https://img4.labirint.ru/rc/d126dd5f206bfff6ebae7b130b4b1608/363x561q80/books101/1000588/cover.jpg?1705119912",
       "Жанр": "Графические романы",
       "id": 1
@@ -35,6 +35,33 @@
       "image": "https://img3.labirint.ru/rc/7a25e42c3d7649a9da4dd84063f5b669/363x561q80/books101/1000241/cover.jpg?1704904077",
       "Жанр": "Графические романы",
       "id": 4
+    },
+    {
+      "title": "Percy Jackson and the Olympians",
+      "genre": "",
+      "description": "Ричард",
+      "price": 755,
+      "image": "https://img4.labirint.ru/rc/d126dd5f206bfff6ebae7b130b4b1608/363x561q80/books101/1000588/cover.jpg?1705119912",
+      "Жанр": "Триллер",
+      "id": 5
+    },
+    {
+      "title": "1",
+      "genre": "",
+      "description": "1",
+      "price": 1,
+      "image": "https://img4.labirint.ru/rc/d126dd5f206bfff6ebae7b130b4b1608/363x561q80/books101/1000588/cover.jpg?1705119912",
+      "Genre": "Комедия",
+      "id": 6
+    },
+    {
+      "title": "Percy Jackson and the Olympians",
+      "genre": "",
+      "description": "Акутами Гэгэ",
+      "price": 2023,
+      "image": "https://img4.labirint.ru/rc/d126dd5f206bfff6ebae7b130b4b1608/363x561q80/books101/1000588/cover.jpg?1705119912",
+      "Genre": "Комедия",
+      "id": 7
     }
   ],
   "genre": [
@@ -49,7 +76,32 @@
     {
       "name": "Графические романы",
       "id": 3
+    },
+    {
+      "name": "Комедия",
+      "id": 4
     }
   ],
-  "favorites": []
+  "comments": [
+    {
+      "objectId": 2,
+      "text": "интересная книга! не рекомендую.",
+      "id": 1
+    },
+    {
+      "objectId": 2,
+      "text": "ля ля ля, и только :(",
+      "id": 2
+    },
+    {
+      "objectId": 3,
+      "text": "zxcMalik",
+      "id": 3
+    },
+    {
+      "objectId": 5,
+      "text": "зумер - не бумер",
+      "id": 4
+    }
+  ]
 }

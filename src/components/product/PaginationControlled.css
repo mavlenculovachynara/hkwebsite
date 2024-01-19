@@ -1,0 +1,8 @@
+.pagination-container {
+	display: flex;
+	justify-content: space-between;
+}
+
+.custom-pagination .MuiPaginationItem-page {
+	display: none;
+}

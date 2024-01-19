@@ -1,4 +1,9 @@
 import * as React from 'react'
+import { useEffect } from 'react'
+import { useState } from 'react'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+
+import { styled, alpha } from '@mui/material/styles'
 import AppBar from '@mui/material/AppBar'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -11,21 +16,76 @@ import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import AdbIcon from '@mui/icons-material/Adb'
-import { Link, Navigate, useNavigate } from 'react-router-dom'
+import InputBase from '@mui/material/InputBase'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
-import { Badge, Fab } from '@mui/material'
+import SearchIcon from '@mui/icons-material/Search'
+import { Badge } from '@mui/material'
+import { Add, Bookmark } from '@mui/icons-material'
+
+import { ADMIN } from '../../helpers/const'
 import { useAuth } from '../context/AuthContextProvider'
 import { useCart } from '../context/CartContextProvider'
-import { ADMIN } from '../../helpers/const'
-import { Add, Bookmark } from '@mui/icons-material'
+import { useBooks } from '../context/BookContextProvider'
 import { useFavorite } from '../context/FavoriteContextProvider'
+
 const pages = [
 	{ id: 1, title: 'Книги', link: '/books' },
-	{ id: 2, title: 'About', link: '/about' },
-	{ id: 3, title: 'Contacts', link: '/contacts' },
+	{ id: 2, title: 'О нас', link: '/about' },
+	{ id: 3, title: '?', link: '/comments' },
 ]
 
+const Search = styled('div')(({ theme }) => ({
+	position: 'relative',
+	borderRadius: theme.shape.borderRadius,
+	backgroundColor: 'white',
+	'&:hover': {
+		backgroundColor: alpha(theme.palette.common.white, 0.95),
+	},
+	marginRight: theme.spacing(2),
+	marginLeft: 0,
+	width: '100%',
+	[theme.breakpoints.up('sm')]: {
+		marginLeft: theme.spacing(3),
+		width: '35ch',
+	},
+}))
+
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+	padding: theme.spacing(0, 2),
+	height: '100%',
+	position: 'absolute',
+	pointerEvents: 'none',
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: 'center',
+}))
+
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+	color: 'inherit',
+	'& .MuiInputBase-input': {
+		padding: theme.spacing(1, 1, 1, 0),
+		paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+		transition: theme.transitions.create('width'),
+		width: '100%',
+		[theme.breakpoints.up('md')]: {
+			width: '20ch',
+		},
+	},
+}))
+
 function Navbar() {
+	const { genre, getGenres, fetchByParams } = useBooks()
+	const [searchParams, setSearchParams] = useSearchParams()
+	const [search, setSearch] = useState(searchParams.get('q') || '')
+	useEffect(() => {
+		getGenres()
+	}, [])
+	useEffect(() => {
+		setSearchParams({
+			q: search,
+		})
+	}, [search])
+
 	const { favorites } = useFavorite()
 	const hasFavorites = favorites >= 0
 	const {
@@ -34,8 +94,8 @@ function Navbar() {
 	} = useAuth()
 	const navigate = useNavigate()
 	const handleLogoutClick = () => {
-		handleLogout() // Вызываем функцию logout из вашего AuthContextProvider
-		navigate('/login') // Перенаправляем пользователя на страницу логина
+		handleLogout()
+		navigate('/login')
 		handleCloseUserMenu()
 	}
 
@@ -70,6 +130,11 @@ function Navbar() {
 		>
 			<Container maxWidth='xl'>
 				<Toolbar style={{ color: 'black' }} disableGutters>
+					<Avatar
+						alt='Лабиринт Icon'
+						src="data:image/svg+xml,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21 3h-7a2.98 2.98 0 0 0-2 .78A2.98 2.98 0 0 0 10 3H3a1 1 0 0 0-1 1v15a1 1 0 0 0 1 1h5.758a2.01 2.01 0 0 1 1.414.586l1.121 1.121c.009.009.021.012.03.021.086.08.182.15.294.196h.002a.996.996 0 0 0 .762 0h.002c.112-.046.208-.117.294-.196.009-.009.021-.012.03-.021l1.121-1.121A2.01 2.01 0 0 1 15.242 20H21a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm-1 15h-4.758a4.03 4.03 0 0 0-2.242.689V6c0-.551.448-1 1-1h6v13z' fill='%2394089e' class='fill-000000'%3E%3C/path%3E%3C/svg%3E"
+						sx={{ width: 70, height: 70, marginRight: 2 }}
+					/>
 					<Typography
 						variant='h6'
 						noWrap
@@ -86,9 +151,18 @@ function Navbar() {
 							textDecoration: 'none',
 						}}
 					>
-						Лабиринт
+						Labyrinth
 					</Typography>
-
+					<Search>
+						<SearchIconWrapper>
+							<SearchIcon />
+						</SearchIconWrapper>
+						<StyledInputBase
+							onChange={e => setSearch(e.target.value)}
+							placeholder='Поиск по Лабиринту...'
+							inputProps={{ 'aria-label': 'search' }}
+						/>
+					</Search>
 					<Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
 						<IconButton
 							size='large'
@@ -166,7 +240,7 @@ function Navbar() {
 							<Link to={'/admin'}>
 								<Button
 									onClick={handleCloseNavMenu}
-									sx={{ my: 2, color: 'red', display: 'block' }}
+									sx={{ my: 2, display: 'block' }}
 								>
 									<Add />
 								</Button>
@@ -219,7 +293,7 @@ function Navbar() {
 							onClose={handleCloseUserMenu}
 						>
 							<Typography sx={{ color: 'black' }}>
-								{email ? `${email}` : 'Guest'}
+								{email ? `${email}` : 'Гость'}
 							</Typography>
 							{email ? (
 								<Link to={'/auth'}>

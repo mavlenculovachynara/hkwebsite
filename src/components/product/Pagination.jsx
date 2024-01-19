@@ -1,15 +1,14 @@
-import { Search } from '@mui/icons-material'
-import { Pagination } from '@mui/material'
 import React from 'react'
+import { Pagination } from '@mui/material'
+import './PaginationControlled.css'
 
-export default function PaginationControlled(props) {
-	const { page, count, handleChange } = props
+export default function PaginationControlled({ page, count, handleChange }) {
 	return (
 		<Pagination
 			count={count}
 			page={page}
 			onChange={handleChange}
-			value={Search}
-		></Pagination>
+			shape='rounded'
+		/>
 	)
 }

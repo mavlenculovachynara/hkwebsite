@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react'
-import { useBooks } from '../context/BookContextProvider'
-import { Box, TextField, Typography } from '@mui/material'
-import BookCard from './BookCard'
 import { useSearchParams } from 'react-router-dom'
+
+import { Box } from '@mui/material'
+import { useBooks } from '../context/BookContextProvider'
+
+import BookCard from './BookCard'
 import PaginationControlled from './Pagination'
 
 const BookList = () => {
 	const { getBooks, books } = useBooks()
+
 	//! Search
 	const [searchParams, setSearchParams] = useSearchParams()
 	console.log(searchParams)
 	useEffect(() => {
 		getBooks()
 	}, [searchParams])
+
 	//! PAGINATION
 	const [page, setPage] = useState(1)
 	const handleChange = (event, value) => {

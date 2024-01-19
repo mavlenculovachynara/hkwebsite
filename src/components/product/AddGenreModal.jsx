@@ -1,6 +1,8 @@
-import { Box, Button, Modal, TextField, Typography } from '@mui/material'
 import React, { useState } from 'react'
+
 import { useBooks } from '../context/BookContextProvider'
+
+import { Box, Button, Modal, TextField, Typography } from '@mui/material'
 
 const modalStyle = {
 	position: 'absolute',
@@ -9,14 +11,14 @@ const modalStyle = {
 	transform: 'translate(-50%, -50%)',
 	width: 400,
 	boxShadow: 24,
-	border: '2px solid #3f51b5', //? Добавлен цвет границы
-	borderRadius: '8px', //? Добавлен скругленный угол
+	border: '2px solid #3f51b5',
+	borderRadius: '8px',
 	backgroundColor: 'white',
 	padding: '20px',
 }
 const headerStyle = {
 	marginBottom: '15px',
-	color: '#3f51b5', //? Добавлен цвет заголовка
+	color: '#3f51b5',
 }
 const inputStyle = {
 	marginBottom: '15px',
@@ -26,12 +28,12 @@ const buttonContainerStyle = {
 	justifyContent: 'flex-end',
 }
 const addButtonStyle = {
-	backgroundColor: '#3f51b5', //? Добавлен цвет кнопки
+	backgroundColor: '#3f51b5',
 	color: 'white',
 	marginRight: '10px',
 }
 const closeButtonStyle = {
-	backgroundColor: '#f50057', //? Добавлен цвет кнопки
+	backgroundColor: '#f50057',
 	color: 'white',
 }
 const AddGenreModal = props => {
@@ -41,7 +43,7 @@ const AddGenreModal = props => {
 	const handleAdd = () => {
 		const newGenre = { name: genre }
 		createGenres(newGenre)
-		handleClose() //? Закрываем модальное окно после добавления категории
+		handleClose()
 	}
 
 	return (

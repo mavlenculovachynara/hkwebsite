@@ -1,13 +1,17 @@
 import React, { createContext, useContext, useReducer } from 'react'
+
 import { ACTIONS } from '../../helpers/const'
+
 import {
 	calcSubPrice,
 	calcTotalPrice,
 	getLocalStorage,
 	getBooksCountInCart,
 } from '../../helpers/functions'
+
 export const cartContext = createContext()
 export const useCart = () => useContext(cartContext)
+
 const INIT_STATE = {
 	cart: JSON.parse(localStorage.getItem('cart')),
 	cartLength: getBooksCountInCart(),
@@ -55,7 +59,7 @@ const CartContextProvider = ({ children }) => {
 		//! Проверяем есть ли уже продукт, который хотим добавить в корзину
 		const bookToFind = cart.books.filter(elem => elem.item.id === book.id)
 		//! Если товар уже добавлен в корзину, то удаляем его из массива cart.products через фильтр, в противном случае добавляем его в cart.products
-		if (bookToFind.length === 0) {
+		if (bookToFind && bookToFind.length === 0) {
 			cart.books.push(newBook)
 		} else {
 			cart.books = cart.books.filter(() => elem => elem.item.id !== book.id)
@@ -70,10 +74,11 @@ const CartContextProvider = ({ children }) => {
 	//! Функция для проверки на наличии товара в корзине
 	const checkBookInCart = id => {
 		let cart = getLocalStorage()
-		if (cart) {
+		if (cart && cart.books) {
 			let newCart = cart.books.filter(elem => elem.item.id === id)
-			return newCart.length > 0 ? true : false
+			return newCart.length > 0
 		}
+		return false
 	}
 	//! Функция для изменения количества товаров в корзине
 	const changeBookCount = (id, count) => {

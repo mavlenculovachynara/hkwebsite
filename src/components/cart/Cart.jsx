@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+
 import {
 	Button,
 	Table,
@@ -8,19 +9,20 @@ import {
 	TableHead,
 	TableRow,
 } from '@mui/material'
+
 import { useCart } from '../context/CartContextProvider'
 
 const Cart = () => {
 	const { cart, getCart, changeBookCount, deleteBookFromCart } = useCart()
 
-	useEffect(() => {
-		getCart()
-	}, [])
-
 	const cartCleaner = () => {
 		localStorage.removeItem('cart')
 		getCart()
 	}
+
+	useEffect(() => {
+		getCart()
+	}, [])
 
 	return (
 		<TableContainer>
@@ -37,8 +39,8 @@ const Cart = () => {
 					</TableRow>
 				</TableHead>
 				<TableBody>
-					{cart.books.length > 0 ? (
-						cart.books.map(elem => (
+					{cart.books && cart.books.length > 0 ? (
+						cart.books?.map(elem => (
 							<TableRow key={elem.item.id}>
 								<TableCell component='th' scope='row'>
 									<img width={'70'} src={elem.item.image} alt='' />

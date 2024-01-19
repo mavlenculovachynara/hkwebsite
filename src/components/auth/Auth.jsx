@@ -3,10 +3,8 @@ import * as React from 'react'
 import Avatar from '@mui/material/Avatar'
 import CssBaseline from '@mui/material/CssBaseline'
 import TextField from '@mui/material/TextField'
-import Link from '@mui/material/Link'
 import Grid from '@mui/material/Grid'
 import Box from '@mui/material/Box'
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined'
 import Typography from '@mui/material/Typography'
 import Container from '@mui/material/Container'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
@@ -14,29 +12,9 @@ import { Button } from '@mui/material'
 
 import { useAuth } from '../context/AuthContextProvider'
 
-function Copyright(props) {
-	return (
-		<Typography
-			variant='body2'
-			color='text.secondary'
-			align='center'
-			{...props}
-		>
-			{'Copyright © '}
-			<Link color='inherit' href='https://mui.com/'>
-				Ваш сайт
-			</Link>{' '}
-			{new Date().getFullYear()}
-			{'.'}
-		</Typography>
-	)
-}
-
-// TODO remove, this demo shouldn't need to reset the theme.
-
 const defaultTheme = createTheme()
 
-export default function Auth() {
+const Auth = () => {
 	const {
 		user,
 		email,
@@ -49,8 +27,9 @@ export default function Auth() {
 		setPassword,
 		hasAccount,
 		setHasAccount,
+		isAdmin,
 	} = useAuth()
-	console.log(user)
+
 	const handleSubmit = e => {
 		e.preventDefault()
 		const data = new FormData(e.currentTarget)
@@ -58,7 +37,10 @@ export default function Auth() {
 			email: data.get('email'),
 			password: data.get('password'),
 		})
+
+		handleRegister(data.get('username'))
 	}
+
 	return (
 		<ThemeProvider theme={defaultTheme}>
 			<Container component='main' maxWidth='xs'>
@@ -72,11 +54,10 @@ export default function Auth() {
 					}}
 				>
 					<Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-						<LockOutlinedIcon />
+						<Avatar src='https://avatars.mds.yandex.net/i?id=e66b7d4d5b11563dd60b42bb1dacbf85bbebb890-9821502-images-thumbs&n=13' />
 					</Avatar>
-
 					<Typography component='h1' variant='h5'>
-						{hasAccount ? 'login form' : 'register form'}
+						{hasAccount ? 'Вход в аккаунт' : 'Регистрация'}
 					</Typography>
 					<Box
 						onSubmit={handleSubmit}
@@ -92,10 +73,9 @@ export default function Auth() {
 							required
 							fullWidth
 							id='email'
-							label='Email Address'
+							label='Почта'
 							name='email'
 							autoComplete='email'
-							autoFocus
 						/>
 						<TextField
 							value={password}
@@ -105,30 +85,38 @@ export default function Auth() {
 							required
 							fullWidth
 							name='password'
-							label='Password'
+							label='Пароль'
 							type='password'
 							id='password'
 							autoComplete='current-password'
 						/>
 						{hasAccount ? (
 							<Button
-								onClick={handleLogin}
 								type='submit'
 								fullWidth
 								variant='contained'
-								sx={{ mt: 3, mb: 2 }}
+								sx={{
+									mt: 3,
+									mb: 2,
+									backgroundColor: 'purple',
+									color: 'primary',
+								}}
 							>
-								Логин
+								Вход
 							</Button>
 						) : (
 							<Button
-								onClick={handleRegister}
-								sx={{ mt: 3, mb: 2 }}
 								type='submit'
 								fullWidth
 								variant='contained'
+								sx={{
+									mt: 3,
+									mb: 2,
+									backgroundColor: 'purple',
+									color: 'primary',
+								}}
 							>
-								Регистрация аккаунта
+								Регистрация
 							</Button>
 						)}
 						<Grid container>
@@ -139,15 +127,16 @@ export default function Auth() {
 									sx={{ cursor: 'pointer', textDecoration: 'underline' }}
 								>
 									{hasAccount
-										? 'don`t have account? register now'
-										: 'already have an account? login'}
+										? 'У вас нет учетной записи? Зарегистрируйтесь сейчас'
+										: 'У вас уже есть учетная запись? Авторизоваться'}
 								</Typography>
 							</Grid>
 						</Grid>
 					</Box>
 				</Box>
-				<Copyright sx={{ mt: 8, mb: 4 }} />
 			</Container>
 		</ThemeProvider>
 	)
 }
+
+export default Auth

@@ -1,33 +1,35 @@
 import React, { createContext, useContext, useReducer, useEffect } from 'react'
+
 import { ACTIONS } from '../../helpers/const'
+
 import {
 	calcTotalPrice,
-	getBooksInFavorite,
 	getLocalStorageFav,
+	getBooksInFavorite,
 } from '../../helpers/functions'
 
 const FavoriteContext = createContext()
 export const useFavorite = () => useContext(FavoriteContext)
 
 const INIT_STATE = {
-	favorite: getLocalStorageFav() || { books: [] },
-	favLength: getBooksInFavorite(),
+	favorite: { books: getLocalStorageFav() || [] },
+	favoriteLength: getBooksInFavorite(),
 }
 
 const reducer = (state = INIT_STATE, action) => {
 	switch (action.type) {
 		case ACTIONS.GET_FAVORITE:
-			return { ...state, favorite: action.payload }
+			return { ...state, favorite: { books: action.payload } }
 		default:
 			return state
 	}
 }
 
-export const FavoriteProvider = ({ children }) => {
+export const FavoriteContextProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(reducer, INIT_STATE)
 
 	const getFavorite = () => {
-		let favorite = getLocalStorageFav()
+		let favorite = getLocalStorageFav() || { books: [] }
 		if (!favorite) {
 			favorite = { books: [] }
 		}
@@ -87,9 +89,11 @@ export const FavoriteProvider = ({ children }) => {
 				addBookToFavorite,
 				checkBookInFavorite,
 				deleteBookFromFavorite,
+				getBooksInFavorite,
 			}}
 		>
 			{children}
 		</FavoriteContext.Provider>
 	)
 }
+export default FavoriteContextProvider
